@@ -6,38 +6,14 @@
  */
 var maxCount = function(m, n, ops) {
   if (ops.length === 0) return m * n;
-  const rows = new Array(m).fill(0);
-  const cols = new Array(n).fill(0);
+  let minRowIndex = Number.MAX_SAFE_INTEGER;
+  let minColIndex = Number.MAX_SAFE_INTEGER;
   for (let i = 0 ; i < ops.length; i++) {
     const op = ops[i];
-    for (let x = 0 ; x < op[0]; x++) {
-      rows[x]++;
-    }
-
-    for (let x = 0 ; x < op[1]; x++) {
-      cols[x]++;
-    }
+    if (op[1] < minColIndex) minColIndex=op[1];
+    if (op[0] < minRowIndex) minRowIndex=op[0];
   }
-
-  const max = rows[0];
-  
-  let countMaxRow = 0;
-  for (let x = 0 ; x < rows.length; x++) {
-    if (max === rows[x]) {
-      countMaxRow++
-    } else break;
-  }
-
-  let countMaxCol = 0;
-  for (let x = 0 ; x < cols.length; x++) {
-    if (max === cols[x]) {
-      countMaxCol++
-    } else break;
-  }
-
-  console.log(rows, cols)
-  
-  return countMaxCol * countMaxRow;
+  return minColIndex*minRowIndex
 };
 
 // console.log(maxCount(3,3,[[2,2],[3,3]]))
