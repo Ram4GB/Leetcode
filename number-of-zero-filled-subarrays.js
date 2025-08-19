@@ -5,17 +5,14 @@
 var zeroFilledSubarray = function(nums) {
     let i=0,j=0;
     let sum = 0;
-    let c = 0;
     while (j <= nums.length) {
       if (nums[j] !== 0) {
-        j++;
-        i=j;
-        sum = sum + Math.floor(c * (c+1) / 2)  
-        c=0;
-      } else {
-        j++;
-        c++;
+        if (i !== j) {
+          sum = sum + Math.floor((j - i) * (j - i + 1) / 2);
+        }
+        i=j+1;
       }
+      j++;
     }
     return sum;
 };
