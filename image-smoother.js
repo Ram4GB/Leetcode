@@ -8,7 +8,7 @@ var imageSmoother = function(img) {
       const row = []
       for (let j = 0; j < img[i].length; j++) {
         let c = 0;
-        let sum = 0;
+        let sum = img[i][j];
         if (isValidCell(img.length,img[i].length,i-1, j-1)) {
           c++;
           sum+=img[i-1][j-1];
@@ -41,7 +41,6 @@ var imageSmoother = function(img) {
           c++;
           sum+=img[i+1][j+1];
         }
-        sum+=img[i][j];
         const ave = Math.floor(sum/(c+1));
         row.push(ave)
       }
