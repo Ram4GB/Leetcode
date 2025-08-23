@@ -4,15 +4,19 @@
  * @return {boolean}
  */
 var canPlaceFlowers = function(flowerbed, n) {
-  let i = 0;
-
+  
   if (n === 0) return true;
+  
+  let i = 1;
 
-  while (i < flowerbed.length) {
+  flowerbed.unshift(0);
+  flowerbed.push(0)
+
+  while (i < flowerbed.length - 1) {
     const prevSlot = flowerbed[i-1];
     const nextSlot = flowerbed[i+1];
     const curSlot = flowerbed[i];
-    if ((!prevSlot || prevSlot === 0) && curSlot === 0 && (nextSlot === 0 || !nextSlot)) {
+    if (prevSlot === 0 && curSlot === 0 && nextSlot === 0) {
       flowerbed[i] =1 ;
       n--;
       i+=2;
