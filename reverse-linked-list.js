@@ -30,16 +30,20 @@ function ListNode(val, next) {
     this.next = (next===undefined ? null : next)
 }
 
-const node1 = new ListNode(5, null);
-const node2 = new ListNode(4, null);
+const node1 = new ListNode(1, null);
+const node2 = new ListNode(2, null);
 const node3 = new ListNode(3, null);
+const node4 = new ListNode(4, null);
 
 node1.next = node2;
 node2.next = node3;
+node3.next = node4;
 
 let n = reverseList(node1)
 
-while(n!==null) {
+console.log(n)
+
+while(n!=null) {
   console.log(n.val)
   n=n.next;
 }
