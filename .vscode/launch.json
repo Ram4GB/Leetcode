@@ -1,0 +1,17 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",           // Debugging Node.js
+      "request": "launch",      // Launches a new process
+      "name": "Launch Program", // The name shown in the debugger dropdown
+      "skipFiles": [
+        "<node_internals>/**"   // Skip internal Node.js code when stepping
+      ],
+      "program": "${file}"      // Run the currently open file
+    }
+  ]
+}
