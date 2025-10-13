@@ -21,3 +21,6 @@ var successfulPairs = function (spells, potions, success) {
 
 console.log(successfulPairs([5, 1, 3], [1, 2, 3, 4, 5], 7));
 console.log(successfulPairs([3, 1, 2], [8, 5, 8], 16));
+
+// [1,2,3,4,5]
+// [8,5,8] -> [5,8,8]
