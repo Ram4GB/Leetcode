@@ -1,4 +1,4 @@
 {
   "github.copilot.nextEditSuggestions.enabled": false,
-  "editor.formatOnSave": false
+  "editor.formatOnSave": true
 }
